@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Menu, X, Sparkles, ArrowRight } from 'lucide-react'
+import glorzenLogo from '../assets/glorzen-logo.png'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -50,7 +51,7 @@ export default function Navbar() {
         {/* Brand Logo */}
         <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
           <img
-            src="/glorzen-logo.png"
+            src={glorzenLogo}
             alt="Glorzen"
             style={{
               width: '40px',

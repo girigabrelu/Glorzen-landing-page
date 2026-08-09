@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Layout, User, Users, MessageSquare, Sparkles, CheckCircle2, Heart, Search, Send, Flame } from 'lucide-react'
+import glorzenLogo from '../assets/glorzen-logo.png'
 
 export default function AppPreviewSection() {
   const [activeTab, setActiveTab] = useState('feels')
@@ -121,7 +122,7 @@ export default function AppPreviewSection() {
           {activeTab === 'profile' && (
             <div style={{ width: '100%', maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
               <img
-                src="/glorzen-logo.png"
+                src={glorzenLogo}
                 alt="Glorzen Profile"
                 style={{
                   width: '90px',

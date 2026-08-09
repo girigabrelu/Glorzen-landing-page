@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Sparkles, Heart, MessageCircle, Share2, Compass, User, Bookmark, Flame, CheckCircle2, ArrowRight } from 'lucide-react'
+import glorzenLogo from '../assets/glorzen-logo.png'
 
 export default function HeroSection() {
   const [liked, setLiked] = useState(false)
@@ -142,7 +143,7 @@ export default function HeroSection() {
                   border: '1px solid rgba(255, 255, 255, 0.06)'
                 }}
               >
-                <img src="/glorzen-logo.png" alt="" style={{ width: '16px', height: '16px', borderRadius: '4px', objectFit: 'cover' }} />
+                <img src={glorzenLogo} alt="" style={{ width: '16px', height: '16px', borderRadius: '4px', objectFit: 'cover' }} />
                 <span>glorzen.app &bull; Feels Feed</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#64748b' }}>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Sparkles, Mail } from 'lucide-react'
+import glorzenLogo from '../assets/glorzen-logo.png'
 
 export default function Footer() {
   const footerLinks = [
@@ -37,7 +38,7 @@ export default function Footer() {
           <div style={{ maxWidth: '320px' }}>
             <a href="#hero" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none', marginBottom: '1rem' }}>
               <img
-                src="/glorzen-logo.png"
+                src={glorzenLogo}
                 alt="Glorzen"
                 style={{
                   width: '38px',
