@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Menu, X, Sparkles, ArrowRight } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import glorzenLogo from '../assets/glorzen-logo.png'
 
 export default function Navbar() {
@@ -25,7 +25,38 @@ export default function Navbar() {
     { name: 'About', href: '#about' },
     { name: 'Community', href: '#community' },
     { name: 'FAQ', href: '#faq' },
+    { name: 'Download', href: '#download', hasIcon: true }
   ]
+
+  // Reusable Animated Download SVG Icon
+  const renderDownloadIcon = (size = 17) => (
+    <div className="premium-download-icon" style={{ width: `${size}px`, height: `${size}px` }}>
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          className="download-tray"
+          d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <g className="download-arrow-group">
+          <path
+            d="M12 3v11"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+          />
+          <path
+            d="M7 10l5 5 5-5"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
+      </svg>
+    </div>
+  )
 
   return (
     <header
@@ -75,21 +106,25 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Links */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '1.8rem' }} className="desktop-nav">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               style={{
                 fontSize: '0.95rem',
-                fontWeight: 500,
-                color: '#94a3b8',
+                fontWeight: link.hasIcon ? 600 : 500,
+                color: link.hasIcon ? '#c7d2fe' : '#94a3b8',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
                 transition: 'color 0.2s ease',
               }}
-              onMouseEnter={(e) => (e.target.style.color = '#ffffff')}
-              onMouseLeave={(e) => (e.target.style.color = '#94a3b8')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = link.hasIcon ? '#c7d2fe' : '#94a3b8')}
             >
-              {link.name}
+              {link.hasIcon && renderDownloadIcon(16)}
+              <span>{link.name}</span>
             </a>
           ))}
         </nav>
@@ -99,9 +134,19 @@ export default function Navbar() {
           <a href="#suggestion" className="btn btn-secondary" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}>
             Have an Idea?
           </a>
-          <a href="#hero" className="btn btn-primary" style={{ padding: '0.65rem 1.3rem', fontSize: '0.9rem' }}>
-            Open Glorzen
-            <ArrowRight size={16} />
+          <a
+            href="#download"
+            className="btn btn-primary"
+            style={{
+              padding: '0.65rem 1.4rem',
+              fontSize: '0.9rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.55rem'
+            }}
+          >
+            {renderDownloadIcon(17)}
+            <span>Download Beta</span>
           </a>
         </div>
 
@@ -152,21 +197,25 @@ export default function Navbar() {
                 fontWeight: 600,
                 color: '#e2e8f0',
                 padding: '0.5rem 0',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+                borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.6rem'
               }}
             >
-              {link.name}
+              {link.hasIcon && renderDownloadIcon(18)}
+              <span>{link.name}</span>
             </a>
           ))}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '0.5rem' }}>
             <a
-              href="#hero"
+              href="#download"
               onClick={() => setMobileMenuOpen(false)}
               className="btn btn-primary"
-              style={{ width: '100%', justifyContent: 'center' }}
+              style={{ width: '100%', justifyContent: 'center', gap: '0.6rem' }}
             >
-              Open Glorzen
-              <ArrowRight size={18} />
+              {renderDownloadIcon(18)}
+              <span>Download Beta</span>
             </a>
           </div>
         </div>

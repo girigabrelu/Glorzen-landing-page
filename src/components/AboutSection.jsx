@@ -35,10 +35,21 @@ export default function AboutSection() {
                 fontSize: '1.15rem',
                 lineHeight: 1.8,
                 color: '#cbd5e1',
-                marginBottom: '1.5rem'
+                marginBottom: '1.25rem'
               }}
             >
               Modern social feeds have become overwhelmingly loud. Between endless short videos, outrage-bait algorithms, and surface-level likes, genuine human expression has gotten lost in the noise.
+            </p>
+
+            <p
+              style={{
+                fontSize: '1.08rem',
+                lineHeight: 1.8,
+                color: '#cbd5e1',
+                marginBottom: '1.25rem'
+              }}
+            >
+              Modern social media has conditioned people to chase perfection—pressuring everyone to act like polished creators, perform for the algorithm, and stage their lives for vanity metrics instead of simply being human.
             </p>
 
             <p
@@ -49,7 +60,7 @@ export default function AboutSection() {
                 marginBottom: '2.5rem'
               }}
             >
-              Glorzen was created to offer a calmer, more meaningful social space. We built a home where your thoughts, writings, and feelings take center stage—allowing you to express yourself clearly and connect with people who truly resonate with who you are.
+              Glorzen solves this by returning social connection to its authentic essence. You don't need to be an influencer or put on a performance. We built a calm sanctuary where your real thoughts, writings, and feelings take center stage—allowing you to express yourself freely and connect with people who truly resonate with who you are.
             </p>
 
             {/* Core Values Strip */}

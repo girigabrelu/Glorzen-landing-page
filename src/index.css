@@ -264,6 +264,77 @@ button, input, textarea {
   outline-offset: 3px;
 }
 
+/* Download CTA Button Styling (Clean, Static, Premium) */
+.download-cta-btn {
+  position: relative;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-fast);
+}
+
+.download-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.55), 0 0 25px rgba(236, 72, 153, 0.35) !important;
+}
+
+.download-cta-btn:active {
+  transform: translateY(0px);
+}
+
+/* Premium Ultra-Smooth Download Icon Animation */
+.premium-download-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.premium-download-icon svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.download-arrow-group {
+  will-change: transform, opacity;
+  animation: smoothArrowSlide 1.9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.download-tray {
+  stroke: currentColor;
+  opacity: 0.92;
+  transition: opacity 0.2s ease;
+}
+
+.download-cta-btn:hover .download-arrow-group {
+  animation-duration: 1.2s;
+}
+
+@keyframes smoothArrowSlide {
+  0% {
+    transform: translateY(-5px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(2px);
+  }
+  82% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(-5px);
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
