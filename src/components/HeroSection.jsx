@@ -131,32 +131,35 @@ export default function HeroSection() {
           </a>
         </div>
 
-        {/* PURE TYPOGRAPHY 3D FIXED ROTATING CIRCULAR WHEEL (Zero Lag, GPU Accelerated) */}
+        {/* PURE TYPOGRAPHY 3D FIXED ROTATING CIRCULAR WHEEL (Stationary Centered Ellipse, Zero Wobble) */}
         <div className="wheel-scene-wrapper">
-          {/* Subtle 3D Orbital Path Guide Ring */}
-          <div className="orbit-guide-ring" />
+          {/* Static Centered 3D Tilted Stage */}
+          <div className="wheel-3d-stage">
+            {/* Subtle 3D Orbital Path Guide Ring */}
+            <div className="orbit-guide-ring" />
 
-          {/* Empty Center Halo */}
-          <div className="orbit-center-empty" />
+            {/* Empty Center Halo */}
+            <div className="orbit-center-empty" />
 
-          {/* 3D Rotating Typography Wheel System */}
-          <div className="orbital-wheel">
-            {EMOTIONAL_WORDS.map((word, index) => {
-              const angleDeg = (index / wordCount) * 360
-              return (
-                <div
-                  key={word}
-                  className="orbital-slot"
-                  style={{
-                    transform: `rotateZ(${angleDeg}deg) translateX(var(--orbit-radius)) rotateZ(-${angleDeg}deg)`
-                  }}
-                >
-                  <div className="orbital-card">
-                    <span className="orbital-word-text">{word}</span>
+            {/* 3D Rotating Typography Wheel System */}
+            <div className="orbital-wheel">
+              {EMOTIONAL_WORDS.map((word, index) => {
+                const angleDeg = (index / wordCount) * 360
+                return (
+                  <div
+                    key={word}
+                    className="orbital-slot"
+                    style={{
+                      transform: `rotateZ(${angleDeg}deg) translateX(var(--orbit-radius)) rotateZ(-${angleDeg}deg)`
+                    }}
+                  >
+                    <div className="orbital-card">
+                      <span className="orbital-word-text">{word}</span>
+                    </div>
                   </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
         </div>
 
@@ -185,7 +188,7 @@ export default function HeroSection() {
       <style>{`
         :root {
           --orbit-radius: 340px;
-          --orbit-pitch: 62deg;
+          --orbit-pitch: 60deg;
           --orbit-speed: 38s;
         }
 
@@ -193,7 +196,7 @@ export default function HeroSection() {
           position: relative;
           width: 100%;
           max-width: 900px;
-          height: 480px;
+          height: 460px;
           margin: 0 auto;
           display: flex;
           align-items: center;
@@ -203,25 +206,38 @@ export default function HeroSection() {
           contain: layout style;
         }
 
-        .orbit-guide-ring {
+        /* Static 3D Stage: Tilted once at center, never wobbles */
+        .wheel-3d-stage {
           position: absolute;
           top: 50%;
           left: 50%;
+          width: 0;
+          height: 0;
+          transform: rotateX(var(--orbit-pitch));
+          transform-style: preserve-3d;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .orbit-guide-ring {
+          position: absolute;
+          top: 0;
+          left: 0;
           width: calc(var(--orbit-radius) * 2);
           height: calc(var(--orbit-radius) * 2);
           border-radius: 50%;
           border: 1px solid rgba(255, 255, 255, 0.08);
           background: radial-gradient(circle, rgba(99, 102, 241, 0.03) 0%, rgba(255, 255, 255, 0.01) 50%, transparent 80%);
           box-shadow: 0 0 60px rgba(99, 102, 241, 0.08), inset 0 0 50px rgba(236, 72, 153, 0.04);
-          transform: translate(-50%, -50%) rotateX(var(--orbit-pitch)) rotateZ(-12deg);
+          transform: translate(-50%, -50%);
           pointer-events: none;
-          will-change: transform;
         }
 
         .orbit-center-empty {
           position: absolute;
-          top: 50%;
-          left: 50%;
+          top: 0;
+          left: 0;
           transform: translate(-50%, -50%);
           width: 180px;
           height: 180px;
@@ -231,14 +247,15 @@ export default function HeroSection() {
           z-index: 1;
         }
 
+        /* Pure planar Z-rotation: stays completely centered */
         .orbital-wheel {
           position: absolute;
-          top: 50%;
-          left: 50%;
+          top: 0;
+          left: 0;
           width: 0;
           height: 0;
           transform-style: preserve-3d;
-          animation: spinWheel var(--orbit-speed) linear infinite;
+          animation: spinWheelPure var(--orbit-speed) linear infinite;
           will-change: transform;
         }
 
@@ -257,11 +274,13 @@ export default function HeroSection() {
 
         .orbital-card {
           position: absolute;
+          top: 0;
+          left: 0;
           transform-style: preserve-3d;
-          animation: counterSpinWheel var(--orbit-speed) linear infinite;
+          animation: counterSpinPure var(--orbit-speed) linear infinite;
           padding: 0.5rem 1.2rem;
           border-radius: 9999px;
-          background: rgba(15, 23, 42, 0.55);
+          background: rgba(15, 23, 42, 0.6);
           border: 1px solid rgba(255, 255, 255, 0.14);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
@@ -291,22 +310,22 @@ export default function HeroSection() {
           text-shadow: 0 0 14px rgba(255, 255, 255, 0.4);
         }
 
-        /* Fixed GPU 3D Wheel Rotation Animations */
-        @keyframes spinWheel {
+        /* Fixed GPU 3D Wheel Rotation Animations (Zero Left-Right Wobble) */
+        @keyframes spinWheelPure {
           0% {
-            transform: rotateX(var(--orbit-pitch)) rotateZ(-12deg) rotateZ(0deg);
+            transform: rotateZ(0deg);
           }
           100% {
-            transform: rotateX(var(--orbit-pitch)) rotateZ(-12deg) rotateZ(360deg);
+            transform: rotateZ(360deg);
           }
         }
 
-        @keyframes counterSpinWheel {
+        @keyframes counterSpinPure {
           0% {
-            transform: translate(-50%, -50%) rotateZ(0deg) rotateZ(12deg) rotateX(calc(-1 * var(--orbit-pitch)));
+            transform: translate(-50%, -50%) rotateZ(0deg) rotateX(calc(-1 * var(--orbit-pitch)));
           }
           100% {
-            transform: translate(-50%, -50%) rotateZ(-360deg) rotateZ(12deg) rotateX(calc(-1 * var(--orbit-pitch)));
+            transform: translate(-50%, -50%) rotateZ(-360deg) rotateX(calc(-1 * var(--orbit-pitch)));
           }
         }
 
@@ -314,7 +333,7 @@ export default function HeroSection() {
         @media (max-width: 768px) {
           :root {
             --orbit-radius: 145px;
-            --orbit-pitch: 58deg;
+            --orbit-pitch: 56deg;
             --orbit-speed: 32s;
           }
 
@@ -325,7 +344,7 @@ export default function HeroSection() {
 
           .wheel-scene-wrapper {
             max-width: 350px;
-            height: 290px;
+            height: 280px;
           }
 
           .hero-bg-glow-top {
@@ -350,4 +369,5 @@ export default function HeroSection() {
     </section>
   )
 }
+
 
