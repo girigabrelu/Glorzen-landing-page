@@ -1,10 +1,10 @@
 import React from 'react'
-import { Heart, Sparkles, MessageCircle, Compass, Users } from 'lucide-react'
+import { Heart, Feather, MessageCircle, Compass, Users } from 'lucide-react'
 
 export default function CommunitySection() {
   const pillars = [
     { title: 'Expression', text: 'Share your genuine feelings, prose, and internal reflections without judgment.', icon: Heart, color: '#ec4899' },
-    { title: 'Creativity', text: 'Turn raw thoughts into beautifully formatted Feels that speak directly to the heart.', icon: Sparkles, color: '#818cf8' },
+    { title: 'Creativity', text: 'Turn raw thoughts into beautifully formatted Feels that speak directly to the heart.', icon: Feather, color: '#818cf8' },
     { title: 'Conversations', text: 'Engage in thoughtful discussions that go far beyond surface-level comments.', icon: MessageCircle, color: '#22d3ee' },
     { title: 'Discovery', text: 'Explore perspectives from diverse minds around the globe based on real resonance.', icon: Compass, color: '#a855f7' },
     { title: 'Connections', text: 'Form long-lasting social circles built on shared values and emotional truth.', icon: Users, color: '#34d399' }

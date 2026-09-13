@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sparkles, ArrowRight } from 'lucide-react'
+import { Heart, ArrowRight } from 'lucide-react'
 
 const EMOTIONAL_WORDS = [
   'Happy',
@@ -79,7 +79,7 @@ export default function HeroSection() {
         {/* Top Badge */}
         <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
           <div className="glass-pill" style={{ padding: '0.4rem 1.1rem', background: 'rgba(255, 255, 255, 0.03)' }}>
-            <Sparkles size={15} style={{ color: '#ec4899' }} />
+            <Heart size={14} style={{ color: '#ec4899' }} />
             <span style={{ letterSpacing: '0.04em', fontWeight: 600 }}>GLORZEN &bull; Express &bull; Connect &bull; Belong</span>
           </div>
         </div>

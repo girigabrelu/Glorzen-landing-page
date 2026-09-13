@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import glorzenLogo from '../assets/glorzen-logo.png'
 
@@ -25,7 +26,8 @@ export default function Navbar() {
     { name: 'About', href: '#about' },
     { name: 'Community', href: '#community' },
     { name: 'FAQ', href: '#faq' },
-    { name: 'Download', href: '#download', hasIcon: true }
+    { name: 'Download', href: '#download', hasIcon: true },
+    { name: 'Developer', href: '/developer', isRoute: true }
   ]
 
   // Reusable Animated Download SVG Icon
@@ -107,26 +109,47 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <nav style={{ display: 'flex', alignItems: 'center', gap: '1.8rem' }} className="desktop-nav">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              style={{
-                fontSize: '0.95rem',
-                fontWeight: link.hasIcon ? 600 : 500,
-                color: link.hasIcon ? '#c7d2fe' : '#94a3b8',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                transition: 'color 0.2s ease',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = link.hasIcon ? '#c7d2fe' : '#94a3b8')}
-            >
-              {link.hasIcon && renderDownloadIcon(16)}
-              <span>{link.name}</span>
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.isRoute ? (
+              <Link
+                key={link.name}
+                to={link.href}
+                style={{
+                  fontSize: '0.95rem',
+                  fontWeight: 500,
+                  color: '#94a3b8',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  transition: 'color 0.2s ease',
+                  textDecoration: 'none',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#94a3b8')}
+              >
+                <span>{link.name}</span>
+              </Link>
+            ) : (
+              <a
+                key={link.name}
+                href={link.href}
+                style={{
+                  fontSize: '0.95rem',
+                  fontWeight: link.hasIcon ? 600 : 500,
+                  color: link.hasIcon ? '#c7d2fe' : '#94a3b8',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  transition: 'color 0.2s ease',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = link.hasIcon ? '#c7d2fe' : '#94a3b8')}
+              >
+                {link.hasIcon && renderDownloadIcon(16)}
+                <span>{link.name}</span>
+              </a>
+            )
+          )}
         </nav>
 
         {/* Desktop CTA */}
@@ -187,26 +210,47 @@ export default function Navbar() {
             gap: '1.25rem'
           }}
         >
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              style={{
-                fontSize: '1.1rem',
-                fontWeight: 600,
-                color: '#e2e8f0',
-                padding: '0.5rem 0',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.6rem'
-              }}
-            >
-              {link.hasIcon && renderDownloadIcon(18)}
-              <span>{link.name}</span>
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.isRoute ? (
+              <Link
+                key={link.name}
+                to={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                style={{
+                  fontSize: '1.1rem',
+                  fontWeight: 600,
+                  color: '#e2e8f0',
+                  padding: '0.5rem 0',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.6rem',
+                  textDecoration: 'none',
+                }}
+              >
+                <span>{link.name}</span>
+              </Link>
+            ) : (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                style={{
+                  fontSize: '1.1rem',
+                  fontWeight: 600,
+                  color: '#e2e8f0',
+                  padding: '0.5rem 0',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.6rem'
+                }}
+              >
+                {link.hasIcon && renderDownloadIcon(18)}
+                <span>{link.name}</span>
+              </a>
+            )
+          )}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '0.5rem' }}>
             <a
               href="#download"

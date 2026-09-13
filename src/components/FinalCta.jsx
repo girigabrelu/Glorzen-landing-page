@@ -1,5 +1,5 @@
 import React from 'react'
-import { Download, Sparkles, ShieldCheck, FlaskConical, ArrowRight } from 'lucide-react'
+import { Download, Compass, ShieldCheck, FlaskConical, ArrowRight } from 'lucide-react'
 
 export default function FinalCta() {
   const downloadUrl = 'https://github.com/girigabrelu/Glorzen-landing-page/releases/tag/v1.0.0'
@@ -39,7 +39,7 @@ export default function FinalCta() {
 
           <div style={{ position: 'relative', zIndex: 1, maxWidth: '720px', margin: '0 auto' }}>
             <div className="glass-pill" style={{ marginBottom: '1.25rem' }}>
-              <Sparkles size={14} style={{ color: '#ec4899' }} />
+              <Compass size={14} style={{ color: '#ec4899' }} />
               <span>Begin Your Journey Today</span>
             </div>
 

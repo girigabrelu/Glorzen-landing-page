@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout, User, Users, MessageSquare, Sparkles, CheckCircle2, Heart, Search, Send, Flame } from 'lucide-react'
+import { Layout, User, Users, MessageSquare, CheckCircle2, Heart, Search, Send, Flame } from 'lucide-react'
 import glorzenLogo from '../assets/glorzen-logo.png'
 
 export default function AppPreviewSection() {

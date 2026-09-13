@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heart, Sparkles, MessageCircle, ShieldCheck } from 'lucide-react'
+import { Heart, MessageCircle, ShieldCheck } from 'lucide-react'
 
 export default function AboutSection() {
   return (

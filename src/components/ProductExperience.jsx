@@ -1,5 +1,5 @@
 import React from 'react'
-import { UserPlus, Sparkles, HeartHandshake, ArrowRight } from 'lucide-react'
+import { UserPlus, Feather, HeartHandshake, ArrowRight } from 'lucide-react'
 
 export default function ProductExperience() {
   const steps = [
@@ -16,7 +16,7 @@ export default function ProductExperience() {
       title: 'Express',
       tagline: 'Share your thoughts, feelings, and stories.',
       description: 'Publish your thoughts as "Feels" with custom mood tags. No forced short videos or clickbait algorithms required.',
-      icon: Sparkles,
+      icon: Feather,
       color: '#ec4899'
     },
     {

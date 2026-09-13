@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Heart, MessageCircle, Share2, Sparkles, Feather, Send, Check } from 'lucide-react'
+import { Heart, MessageCircle, Share2, Feather, Send, Check } from 'lucide-react'
 
 export default function FeelsShowcase() {
   const initialFeels = [
@@ -23,7 +23,7 @@ export default function FeelsShowcase() {
       avatar: 'ER',
       avatarGradient: 'linear-gradient(135deg, #ec4899, #a855f7)',
       content: 'Maybe growing up is learning that not every goodbye needs an explanation.',
-      tag: '✨ Perspective',
+      tag: '💡 Perspective',
       time: '1h ago',
       likes: 512,
       comments: 89,
