@@ -12,7 +12,7 @@ export default function Footer() {
     { name: 'About Us', href: '#about' },
     { name: 'Community', href: '#community' },
     { name: 'FAQ', href: '#faq' },
-    { name: 'Privacy Policy', href: '#about' },
+    { name: 'Privacy Policy', href: '/privacy-policy', isRoute: true, highlight: true },
     { name: 'Terms of Service', href: '#about' }
   ]
 
@@ -69,21 +69,57 @@ export default function Footer() {
           <div>
             <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#f8fafc', marginBottom: '1.25rem' }}>Navigation</h4>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem' }}>
-              {footerLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  style={{
-                    fontSize: '0.875rem',
-                    color: '#94a3b8',
-                    transition: 'color 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = '#ffffff')}
-                  onMouseLeave={(e) => (e.target.style.color = '#94a3b8')}
-                >
-                  {link.name}
-                </a>
-              ))}
+              {footerLinks.map((link) =>
+                link.isRoute ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    id="footer-privacy-policy-link"
+                    style={{
+                      fontSize: '0.875rem',
+                      color: link.highlight ? '#a5b4fc' : '#94a3b8',
+                      fontWeight: link.highlight ? 600 : 400,
+                      transition: 'all 0.2s ease',
+                      textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.3rem'
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = link.highlight ? '#a5b4fc' : '#94a3b8')}
+                  >
+                    <span>{link.name}</span>
+                    {link.highlight && (
+                      <span
+                        style={{
+                          fontSize: '0.65rem',
+                          background: 'rgba(99, 102, 241, 0.25)',
+                          color: '#c7d2fe',
+                          padding: '0.1rem 0.35rem',
+                          borderRadius: '4px',
+                          border: '1px solid rgba(99, 102, 241, 0.4)'
+                        }}
+                      >
+                        Official
+                      </span>
+                    )}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    style={{
+                      fontSize: '0.875rem',
+                      color: '#94a3b8',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => (e.target.style.color = '#ffffff')}
+                    onMouseLeave={(e) => (e.target.style.color = '#94a3b8')}
+                  >
+                    {link.name}
+                  </a>
+                )
+              )}
             </div>
           </div>
 
@@ -218,8 +254,21 @@ export default function Footer() {
           }}
         >
           <div>© 2026 Glorzen. All rights reserved.</div>
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <span>Privacy</span>
+          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+            <Link
+              to="/privacy-policy"
+              id="footer-bottom-privacy-link"
+              style={{
+                color: '#818cf8',
+                fontWeight: 600,
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#818cf8')}
+            >
+              Privacy Policy
+            </Link>
             <span>Terms</span>
             <span>Security</span>
           </div>

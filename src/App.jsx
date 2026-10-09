@@ -1,5 +1,5 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import FeaturesSection from './components/FeaturesSection'
@@ -14,6 +14,15 @@ import FinalCta from './components/FinalCta'
 import SuggestionSection from './components/SuggestionSection'
 import Footer from './components/Footer'
 import DeveloperPage from './components/DeveloperPage'
+import PrivacyPolicyPage from './components/PrivacyPolicyPage'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
 
 function LandingPage() {
   return (
@@ -39,11 +48,16 @@ function LandingPage() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/developer" element={<DeveloperPage />} />
-      <Route path="*" element={<LandingPage />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/developer" element={<DeveloperPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
+        <Route path="*" element={<LandingPage />} />
+      </Routes>
+    </>
   )
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Heart, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Heart, ArrowRight, Shield } from 'lucide-react'
 
 const EMOTIONAL_WORDS = [
   'Happy',
@@ -126,9 +127,39 @@ export default function HeroSection() {
             Explore Glorzen
             <ArrowRight size={18} />
           </a>
-          <a href="#features" className="btn btn-secondary" style={{ padding: '0.9rem 2.2rem', fontSize: '1.05rem' }}>
-            Get Started
-          </a>
+          <Link
+            to="/privacy-policy"
+            id="hero-privacy-policy-btn"
+            className="btn btn-secondary"
+            style={{
+              padding: '0.9rem 2.2rem',
+              fontSize: '1.05rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.65rem',
+              textDecoration: 'none',
+              background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.18) 0%, rgba(56, 189, 248, 0.1) 100%)',
+              border: '1px solid rgba(99, 102, 241, 0.45)',
+              color: '#ffffff',
+              boxShadow: '0 4px 20px rgba(99, 102, 241, 0.25)',
+              transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'linear-gradient(135deg, rgba(99, 102, 241, 0.32) 0%, rgba(56, 189, 248, 0.2) 100%)'
+              e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.75)'
+              e.currentTarget.style.boxShadow = '0 6px 28px rgba(99, 102, 241, 0.45)'
+              e.currentTarget.style.transform = 'translateY(-2px)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'linear-gradient(135deg, rgba(99, 102, 241, 0.18) 0%, rgba(56, 189, 248, 0.1) 100%)'
+              e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.45)'
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(99, 102, 241, 0.25)'
+              e.currentTarget.style.transform = 'translateY(0)'
+            }}
+          >
+            <Shield size={19} style={{ color: '#818cf8' }} />
+            <span style={{ fontWeight: 600 }}>Privacy Policy</span>
+          </Link>
         </div>
 
         {/* PURE TYPOGRAPHY 3D FIXED ROTATING CIRCULAR WHEEL (Stationary Centered Ellipse, Zero Wobble) */}
