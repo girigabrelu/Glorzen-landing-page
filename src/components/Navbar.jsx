@@ -9,11 +9,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
+      setScrolled(window.scrollY > 20)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -31,7 +27,7 @@ export default function Navbar() {
   ]
 
   // Reusable Animated Download SVG Icon
-  const renderDownloadIcon = (size = 17) => (
+  const renderDownloadIcon = (size = 16) => (
     <div className="premium-download-icon" style={{ width: `${size}px`, height: `${size}px` }}>
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -68,16 +64,12 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 1000,
-        transition: 'all 0.3s ease',
-        background: scrolled
-          ? 'rgba(7, 9, 14, 0.88)'
-          : 'transparent',
+        transition: 'background 0.25s ease, border-color 0.25s ease, padding 0.25s ease',
+        background: scrolled ? 'rgba(10, 13, 20, 0.92)' : 'transparent',
         backdropFilter: scrolled ? 'blur(16px)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
-        borderBottom: scrolled
-          ? '1px solid rgba(255, 255, 255, 0.08)'
-          : '1px solid transparent',
-        padding: scrolled ? '0.85rem 0' : '1.25rem 0'
+        borderBottom: scrolled ? '1px solid var(--border-subtle)' : '1px solid transparent',
+        padding: scrolled ? '0.75rem 0' : '1.2rem 0'
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -85,22 +77,22 @@ export default function Navbar() {
         <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
           <img
             src={glorzenLogo}
-            alt="Glorzen"
+            alt="Glorzen Logo"
             style={{
-              width: '40px',
-              height: '40px',
+              width: '38px',
+              height: '38px',
               borderRadius: '10px',
               objectFit: 'cover',
-              boxShadow: '0 4px 16px rgba(99, 102, 241, 0.3)'
+              border: '1px solid rgba(255, 255, 255, 0.12)'
             }}
           />
           <span
             style={{
               fontFamily: 'var(--font-heading)',
-              fontSize: '1.4rem',
-              fontWeight: 800,
+              fontSize: '1.35rem',
+              fontWeight: 700,
               letterSpacing: '-0.02em',
-              color: '#ffffff'
+              color: 'var(--text-primary)'
             }}
           >
             Glorzen
@@ -108,24 +100,24 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Links */}
-        <nav style={{ display: 'flex', alignItems: 'center', gap: '1.8rem' }} className="desktop-nav">
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '1.75rem' }} className="desktop-nav">
           {navLinks.map((link) =>
             link.isRoute ? (
               <Link
                 key={link.name}
                 to={link.href}
                 style={{
-                  fontSize: '0.95rem',
+                  fontSize: '0.92rem',
                   fontWeight: 500,
-                  color: '#94a3b8',
+                  color: 'var(--text-secondary)',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.4rem',
-                  transition: 'color 0.2s ease',
-                  textDecoration: 'none',
+                  gap: '0.35rem',
+                  transition: 'color var(--transition-fast)',
+                  textDecoration: 'none'
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#94a3b8')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
               >
                 <span>{link.name}</span>
               </Link>
@@ -134,18 +126,18 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 style={{
-                  fontSize: '0.95rem',
+                  fontSize: '0.92rem',
                   fontWeight: link.hasIcon ? 600 : 500,
-                  color: link.hasIcon ? '#c7d2fe' : '#94a3b8',
+                  color: link.hasIcon ? '#c7d2fe' : 'var(--text-secondary)',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.4rem',
-                  transition: 'color 0.2s ease',
+                  gap: '0.35rem',
+                  transition: 'color var(--transition-fast)'
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = link.hasIcon ? '#c7d2fe' : '#94a3b8')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = link.hasIcon ? '#c7d2fe' : 'var(--text-secondary)')}
               >
-                {link.hasIcon && renderDownloadIcon(16)}
+                {link.hasIcon && renderDownloadIcon(15)}
                 <span>{link.name}</span>
               </a>
             )
@@ -153,22 +145,31 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop CTA */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }} className="desktop-cta">
-          <a href="#suggestion" className="btn btn-secondary" style={{ padding: '0.6rem 1.2rem', fontSize: '0.9rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }} className="desktop-cta">
+          <a
+            href="#suggestion"
+            className="btn btn-secondary"
+            style={{
+              padding: '0.55rem 1.15rem',
+              fontSize: '0.88rem',
+              fontWeight: 500
+            }}
+          >
             Have an Idea?
           </a>
           <a
             href="#download"
             className="btn btn-primary"
             style={{
-              padding: '0.65rem 1.4rem',
-              fontSize: '0.9rem',
+              padding: '0.58rem 1.25rem',
+              fontSize: '0.88rem',
+              fontWeight: 600,
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '0.55rem'
+              gap: '0.5rem'
             }}
           >
-            {renderDownloadIcon(17)}
+            {renderDownloadIcon(16)}
             <span>Download Beta</span>
           </a>
         </div>
@@ -179,16 +180,18 @@ export default function Navbar() {
           aria-label="Toggle navigation menu"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           style={{
-            background: 'rgba(255, 255, 255, 0.06)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
+            background: 'rgba(255, 255, 255, 0.05)',
+            border: '1px solid var(--border-regular)',
             borderRadius: '10px',
             padding: '0.5rem',
-            color: '#fff',
+            color: 'var(--text-primary)',
             cursor: 'pointer',
-            display: 'none'
+            display: 'none',
+            alignItems: 'center',
+            justifyContent: 'center'
           }}
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
@@ -200,14 +203,13 @@ export default function Navbar() {
             top: '100%',
             left: 0,
             right: 0,
-            background: 'rgba(9, 13, 22, 0.96)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+            background: '#0d111a',
+            borderBottom: '1px solid var(--border-regular)',
+            boxShadow: 'var(--shadow-lg)',
             padding: '1.5rem',
             display: 'flex',
             flexDirection: 'column',
-            gap: '1.25rem'
+            gap: '1rem'
           }}
         >
           {navLinks.map((link) =>
@@ -217,15 +219,15 @@ export default function Navbar() {
                 to={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 style={{
-                  fontSize: '1.1rem',
-                  fontWeight: 600,
-                  color: '#e2e8f0',
+                  fontSize: '1rem',
+                  fontWeight: 500,
+                  color: 'var(--text-primary)',
                   padding: '0.5rem 0',
-                  borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                  borderBottom: '1px solid var(--border-subtle)',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.6rem',
-                  textDecoration: 'none',
+                  gap: '0.5rem',
+                  textDecoration: 'none'
                 }}
               >
                 <span>{link.name}</span>
@@ -236,29 +238,37 @@ export default function Navbar() {
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 style={{
-                  fontSize: '1.1rem',
-                  fontWeight: 600,
-                  color: '#e2e8f0',
+                  fontSize: '1rem',
+                  fontWeight: 500,
+                  color: 'var(--text-primary)',
                   padding: '0.5rem 0',
-                  borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                  borderBottom: '1px solid var(--border-subtle)',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.6rem'
+                  gap: '0.5rem'
                 }}
               >
-                {link.hasIcon && renderDownloadIcon(18)}
+                {link.hasIcon && renderDownloadIcon(16)}
                 <span>{link.name}</span>
               </a>
             )
           )}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '0.5rem' }}>
             <a
+              href="#suggestion"
+              onClick={() => setMobileMenuOpen(false)}
+              className="btn btn-secondary"
+              style={{ width: '100%', justifyContent: 'center' }}
+            >
+              Have an Idea?
+            </a>
+            <a
               href="#download"
               onClick={() => setMobileMenuOpen(false)}
               className="btn btn-primary"
-              style={{ width: '100%', justifyContent: 'center', gap: '0.6rem' }}
+              style={{ width: '100%', justifyContent: 'center', gap: '0.5rem' }}
             >
-              {renderDownloadIcon(18)}
+              {renderDownloadIcon(16)}
               <span>Download Beta</span>
             </a>
           </div>
@@ -266,12 +276,12 @@ export default function Navbar() {
       )}
 
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 960px) {
           .desktop-nav, .desktop-cta {
             display: none !important;
           }
           .mobile-toggle {
-            display: flex !important;
+            display: inline-flex !important;
           }
         }
       `}</style>

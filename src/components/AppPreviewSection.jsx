@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout, User, Users, MessageSquare, CheckCircle2, Heart, Search, Send, Flame } from 'lucide-react'
+import { Layout, User, Users, MessageSquare, Search, Heart, Send } from 'lucide-react'
 import glorzenLogo from '../assets/glorzen-logo.png'
 
 export default function AppPreviewSection() {
@@ -13,16 +13,16 @@ export default function AppPreviewSection() {
   ]
 
   return (
-    <section className="section-spacing" style={{ position: 'relative', background: 'rgba(7, 9, 14, 0.6)' }}>
+    <section className="section-spacing" style={{ position: 'relative', background: 'var(--bg-surface-subtle)' }}>
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="badge">Product Showcase</span>
+          <span className="badge">Interface Preview</span>
           <h2>
             Designed <span className="gradient-text">Around You.</span>
           </h2>
           <p>
-            Explore the clean, distraction-free interface engineered for human reflection and intuitive connection.
+            Explore the calm, distraction-free interface engineered for human reflection and intentional connection.
           </p>
         </div>
 
@@ -32,8 +32,8 @@ export default function AppPreviewSection() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '0.75rem',
-            marginBottom: '3rem',
+            gap: '0.6rem',
+            marginBottom: '2.5rem',
             flexWrap: 'wrap'
           }}
         >
@@ -47,24 +47,24 @@ export default function AppPreviewSection() {
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.6rem',
-                  padding: '0.75rem 1.4rem',
+                  gap: '0.5rem',
+                  padding: '0.65rem 1.3rem',
                   borderRadius: '9999px',
-                  fontSize: '0.95rem',
+                  fontSize: '0.9rem',
                   fontWeight: 600,
                   cursor: 'pointer',
                   border: isActive
-                    ? '1px solid rgba(99, 102, 241, 0.5)'
-                    : '1px solid rgba(255, 255, 255, 0.08)',
+                    ? '1px solid rgba(255, 255, 255, 0.2)'
+                    : '1px solid var(--border-subtle)',
                   background: isActive
-                    ? 'linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(236, 72, 153, 0.15))'
-                    : 'rgba(255, 255, 255, 0.04)',
-                  color: isActive ? '#ffffff' : '#94a3b8',
-                  boxShadow: isActive ? '0 4px 20px rgba(99, 102, 241, 0.2)' : 'none',
-                  transition: 'all 0.25s ease'
+                    ? 'var(--bg-surface-elevated)'
+                    : 'rgba(255, 255, 255, 0.03)',
+                  color: isActive ? '#ffffff' : 'var(--text-secondary)',
+                  boxShadow: isActive ? 'var(--shadow-sm)' : 'none',
+                  transition: 'all var(--transition-fast)'
                 }}
               >
-                <IconComp size={18} style={{ color: isActive ? '#ec4899' : '#94a3b8' }} />
+                <IconComp size={16} style={{ color: isActive ? 'var(--accent-rose)' : 'inherit' }} />
                 <span>{tab.label}</span>
               </button>
             )
@@ -75,111 +75,125 @@ export default function AppPreviewSection() {
         <div
           className="glass-card"
           style={{
-            maxWidth: '1000px',
+            maxWidth: '920px',
             margin: '0 auto',
-            borderRadius: '24px',
+            borderRadius: '20px',
             padding: '2rem',
-            border: '1px solid rgba(255, 255, 255, 0.12)',
-            background: 'rgba(11, 15, 25, 0.9)',
-            minHeight: '420px',
+            background: 'var(--bg-surface)',
+            border: '1px solid var(--border-regular)',
+            minHeight: '380px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
           }}
         >
+          {/* TAB 1: FEELS FEED */}
           {activeTab === 'feels' && (
             <div style={{ width: '100%' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', paddingBottom: '0.75rem' }}>
-                <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#f8fafc' }}>Latest Feels Feed</h4>
-                <span className="badge">Updated Live</span>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
+                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)' }}>Your Home Feed</h4>
+                <span className="badge" style={{ fontSize: '0.68rem', padding: '0.2rem 0.55rem' }}>Curated Chronologically</span>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <div style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '1.25rem', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.06)' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.5rem' }}>
-                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#6366f1', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.8rem' }}>MA</div>
-                    <span style={{ fontWeight: 600, color: '#f1f5f9' }}>Marcus Aurelius Fan</span>
-                    <span style={{ fontSize: '0.8rem', color: '#64748b' }}>@marcus_reflections</span>
+                <div style={{ background: 'rgba(255, 255, 255, 0.02)', padding: '1.25rem', borderRadius: '14px', border: '1px solid var(--border-subtle)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
+                      <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#312e81', color: '#c7d2fe', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.78rem' }}>MA</div>
+                      <div>
+                        <span style={{ fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.9rem' }}>Marcus Aurelius Fan</span>
+                        <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginLeft: '0.4rem' }}>@marcus_reflections</span>
+                      </div>
+                    </div>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>24m ago</span>
                   </div>
-                  <p style={{ fontStyle: 'italic', color: '#cbd5e1', fontSize: '1rem' }}>
-                    "You have power over your mind - not outside events. Realize this, and you will find strength."
+                  <p style={{ color: '#cbd5e1', fontSize: '0.95rem', lineHeight: 1.55 }}>
+                    "You have power over your mind - not outside events. Realize this, and you will find inner peace."
                   </p>
                 </div>
 
-                <div style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '1.25rem', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.06)' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.5rem' }}>
-                    <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#ec4899', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.8rem' }}>NL</div>
-                    <span style={{ fontWeight: 600, color: '#f1f5f9' }}>Nina Lin</span>
-                    <span style={{ fontSize: '0.8rem', color: '#64748b' }}>@nina_words</span>
+                <div style={{ background: 'rgba(255, 255, 255, 0.02)', padding: '1.25rem', borderRadius: '14px', border: '1px solid var(--border-subtle)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
+                      <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#831843', color: '#fbcfe8', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.78rem' }}>NL</div>
+                      <div>
+                        <span style={{ fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.9rem' }}>Nina Lin</span>
+                        <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginLeft: '0.4rem' }}>@nina_words</span>
+                      </div>
+                    </div>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>2h ago</span>
                   </div>
-                  <p style={{ fontStyle: 'italic', color: '#cbd5e1', fontSize: '1rem' }}>
-                    "The night sky doesn't explain itself to the stars; it just holds them."
+                  <p style={{ color: '#cbd5e1', fontSize: '0.95rem', lineHeight: 1.55 }}>
+                    "The night sky doesn't explain itself to the stars; it simply creates a calm place for them to shine."
                   </p>
                 </div>
               </div>
             </div>
           )}
 
+          {/* TAB 2: PROFILE SPACE */}
           {activeTab === 'profile' && (
-            <div style={{ width: '100%', maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ width: '100%', maxWidth: '540px', margin: '0 auto', textAlign: 'center' }}>
               <img
                 src={glorzenLogo}
-                alt="Glorzen Profile"
+                alt="Glorzen Profile Preview"
                 style={{
-                  width: '90px',
-                  height: '90px',
-                  borderRadius: '24px',
+                  width: '76px',
+                  height: '76px',
+                  borderRadius: '18px',
                   objectFit: 'cover',
                   margin: '0 auto 1rem auto',
                   display: 'block',
-                  boxShadow: '0 8px 30px rgba(99, 102, 241, 0.4)',
-                  border: '1px solid rgba(255, 255, 255, 0.15)'
+                  border: '1px solid var(--border-regular)'
                 }}
               />
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#f8fafc', marginBottom: '0.25rem' }}>
+              <h3 style={{ fontSize: '1.35rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.2rem' }}>
                 Your Custom Profile
               </h3>
-              <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '1.25rem' }}>
                 @creator_mindset &bull; Writer, Thinker & Dreamer
               </p>
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', background: 'rgba(255, 255, 255, 0.04)', padding: '1rem', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', background: 'rgba(255, 255, 255, 0.03)', padding: '0.9rem', borderRadius: '14px', border: '1px solid var(--border-subtle)' }}>
                 <div>
-                  <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#f8fafc' }}>128</div>
-                  <div style={{ fontSize: '0.8rem', color: '#64748b' }}>Feels Shared</div>
+                  <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-primary)' }}>128</div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Feels Shared</div>
                 </div>
+                <div style={{ width: '1px', background: 'var(--border-subtle)' }} />
                 <div>
-                  <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#f8fafc' }}>1.4k</div>
-                  <div style={{ fontSize: '0.8rem', color: '#64748b' }}>Connections</div>
+                  <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-primary)' }}>1.4k</div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Connections</div>
                 </div>
+                <div style={{ width: '1px', background: 'var(--border-subtle)' }} />
                 <div>
-                  <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#f8fafc' }}>98%</div>
-                  <div style={{ fontSize: '0.8rem', color: '#64748b' }}>Resonance</div>
+                  <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-primary)' }}>98%</div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Resonance</div>
                 </div>
               </div>
             </div>
           )}
 
+          {/* TAB 3: DISCOVERY */}
           {activeTab === 'discover' && (
             <div style={{ width: '100%' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', background: 'rgba(255, 255, 255, 0.05)', padding: '0.75rem 1.25rem', borderRadius: '14px', border: '1px solid rgba(255, 255, 255, 0.1)', marginBottom: '1.5rem' }}>
-                <Search size={18} style={{ color: '#94a3b8' }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', background: 'rgba(255, 255, 255, 0.04)', padding: '0.7rem 1.15rem', borderRadius: '12px', border: '1px solid var(--border-regular)', marginBottom: '1.25rem' }}>
+                <Search size={17} style={{ color: 'var(--text-muted)' }} />
                 <input
                   type="text"
-                  placeholder="Discover people sharing thoughts on philosophy, art, growth..."
+                  placeholder="Discover writers sharing thoughts on philosophy, literature, personal growth..."
                   readOnly
-                  style={{ background: 'none', border: 'none', color: '#e2e8f0', width: '100%', outline: 'none' }}
+                  style={{ background: 'none', border: 'none', color: '#e2e8f0', width: '100%', outline: 'none', fontSize: '0.9rem' }}
                 />
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '0.85rem' }}>
                 {[
                   { name: 'Dr. Sophia Vance', bio: 'Cognitive Science & Reflection', followers: '840' },
                   { name: 'Liam O\'Connor', bio: 'Poetry & Late Night Thoughts', followers: '1.2k' },
-                  { name: 'Amara Chen', bio: 'Minimalist Design & Life', followers: '950' }
+                  { name: 'Amara Chen', bio: 'Minimalist Life & Architecture', followers: '950' }
                 ].map((user, i) => (
-                  <div key={i} style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '1rem', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.06)' }}>
-                    <div style={{ fontWeight: 700, color: '#f8fafc', fontSize: '0.95rem' }}>{user.name}</div>
-                    <div style={{ fontSize: '0.8rem', color: '#94a3b8', margin: '0.25rem 0 0.75rem 0' }}>{user.bio}</div>
-                    <button className="btn btn-secondary" style={{ width: '100%', padding: '0.4rem', fontSize: '0.8rem' }}>
+                  <div key={i} style={{ background: 'rgba(255, 255, 255, 0.02)', padding: '1rem', borderRadius: '14px', border: '1px solid var(--border-subtle)' }}>
+                    <div style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: '0.92rem' }}>{user.name}</div>
+                    <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', margin: '0.2rem 0 0.75rem 0' }}>{user.bio}</div>
+                    <button className="btn btn-secondary" style={{ width: '100%', padding: '0.4rem', fontSize: '0.8rem', borderRadius: '8px' }}>
                       Connect
                     </button>
                   </div>
@@ -188,23 +202,24 @@ export default function AppPreviewSection() {
             </div>
           )}
 
+          {/* TAB 4: CHAT */}
           {activeTab === 'chat' && (
-            <div style={{ width: '100%', maxWidth: '700px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingBottom: '1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', marginBottom: '1rem' }}>
-                <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#10b981', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700 }}>
+            <div style={{ width: '100%', maxWidth: '640px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingBottom: '0.85rem', borderBottom: '1px solid var(--border-subtle)', marginBottom: '1rem' }}>
+                <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#064e3b', color: '#a7f3d0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.8rem' }}>
                   SC
                 </div>
                 <div>
-                  <div style={{ fontWeight: 700, color: '#f8fafc', fontSize: '0.95rem' }}>Sarah Connor</div>
-                  <div style={{ fontSize: '0.75rem', color: '#10b981' }}>Online now</div>
+                  <div style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: '0.92rem' }}>Sarah Connor</div>
+                  <div style={{ fontSize: '0.75rem', color: '#10b981' }}>Active in circle</div>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1rem' }}>
-                <div style={{ alignSelf: 'flex-start', background: 'rgba(255, 255, 255, 0.06)', padding: '0.75rem 1rem', borderRadius: '16px 16px 16px 4px', maxWidth: '80%', fontSize: '0.9rem', color: '#e2e8f0' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <div style={{ alignSelf: 'flex-start', background: 'rgba(255, 255, 255, 0.05)', padding: '0.75rem 1rem', borderRadius: '14px 14px 14px 4px', maxWidth: '82%', fontSize: '0.88rem', color: '#e2e8f0', border: '1px solid var(--border-subtle)' }}>
                   I really resonated with your Feel about finding quiet moments in chaotic days.
                 </div>
-                <div style={{ alignSelf: 'flex-end', background: 'var(--brand-gradient)', padding: '0.75rem 1rem', borderRadius: '16px 16px 4px 16px', maxWidth: '80%', fontSize: '0.9rem', color: '#fff' }}>
+                <div style={{ alignSelf: 'flex-end', background: 'var(--accent-primary)', padding: '0.75rem 1rem', borderRadius: '14px 14px 4px 14px', maxWidth: '82%', fontSize: '0.88rem', color: '#ffffff' }}>
                   Thank you! That means a lot. It took me a long time to learn to appreciate the pause.
                 </div>
               </div>

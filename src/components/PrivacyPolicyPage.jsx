@@ -94,55 +94,24 @@ export default function PrivacyPolicyPage() {
     <div
       style={{
         minHeight: '100vh',
-        background: '#07090e',
-        color: '#f8fafc',
+        background: 'var(--bg-dark)',
+        color: 'var(--text-primary)',
         fontFamily: 'var(--font-body)',
         position: 'relative',
         overflowX: 'hidden'
       }}
     >
-      {/* Background Ambient Glows */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'fixed',
-          top: '-150px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '800px',
-          height: '500px',
-          background: 'radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(56, 189, 248, 0.05) 45%, transparent 70%)',
-          filter: 'blur(70px)',
-          pointerEvents: 'none',
-          zIndex: 0
-        }}
-      />
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'fixed',
-          bottom: '-150px',
-          right: '5%',
-          width: '550px',
-          height: '550px',
-          background: 'radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.04) 50%, transparent 70%)',
-          filter: 'blur(80px)',
-          pointerEvents: 'none',
-          zIndex: 0
-        }}
-      />
-
       {/* Sticky Top Navigation */}
       <header
         style={{
           position: 'sticky',
           top: 0,
           zIndex: 100,
-          background: 'rgba(7, 9, 14, 0.9)',
+          background: 'rgba(10, 13, 20, 0.92)',
           backdropFilter: 'blur(16px)',
           WebkitBackdropFilter: 'blur(16px)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-          padding: '0.9rem 0'
+          borderBottom: '1px solid var(--border-subtle)',
+          padding: '0.85rem 0'
         }}
       >
         <div
@@ -168,19 +137,19 @@ export default function PrivacyPolicyPage() {
               src={glorzenLogo}
               alt="Glorzen"
               style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '10px',
+                width: '34px',
+                height: '34px',
+                borderRadius: '8px',
                 objectFit: 'cover',
-                boxShadow: '0 4px 14px rgba(99, 102, 241, 0.35)'
+                border: '1px solid rgba(255, 255, 255, 0.12)'
               }}
             />
             <span
               style={{
                 fontFamily: 'var(--font-heading)',
                 fontSize: '1.25rem',
-                fontWeight: 800,
-                color: '#ffffff',
+                fontWeight: 700,
+                color: 'var(--text-primary)',
                 letterSpacing: '-0.02em'
               }}
             >
@@ -249,27 +218,14 @@ export default function PrivacyPolicyPage() {
             className="glass-card"
             style={{
               padding: 'clamp(2rem, 4vw, 3rem)',
-              borderRadius: '24px',
-              background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(20, 27, 45, 0.9) 100%)',
-              border: '1px solid rgba(99, 102, 241, 0.25)',
-              boxShadow: '0 12px 40px rgba(0, 0, 0, 0.45), 0 0 30px rgba(99, 102, 241, 0.1)',
+              borderRadius: '20px',
+              background: 'var(--bg-surface)',
+              border: '1px solid var(--border-accent)',
+              boxShadow: 'var(--shadow-md)',
               marginBottom: '2.5rem',
-              position: 'relative',
-              overflow: 'hidden'
+              position: 'relative'
             }}
           >
-            <div
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                width: '320px',
-                height: '100%',
-                background: 'radial-gradient(circle at 100% 0%, rgba(99, 102, 241, 0.18), transparent 70%)',
-                pointerEvents: 'none'
-              }}
-            />
-
             <div style={{ position: 'relative', zIndex: 1, maxWidth: '820px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
                 <span
@@ -648,8 +604,7 @@ export default function PrivacyPolicyPage() {
                           width: '6px',
                           height: '6px',
                           borderRadius: '50%',
-                          background: '#38bdf8',
-                          boxShadow: '0 0 8px #38bdf8',
+                          background: 'var(--accent-primary-light)',
                           flexShrink: 0,
                           transform: 'translateY(-2px)'
                         }}
@@ -743,8 +698,7 @@ export default function PrivacyPolicyPage() {
                           width: '6px',
                           height: '6px',
                           borderRadius: '50%',
-                          background: '#a78bfa',
-                          boxShadow: '0 0 8px #a78bfa',
+                          background: 'var(--accent-rose)',
                           flexShrink: 0,
                           transform: 'translateY(-2px)'
                         }}

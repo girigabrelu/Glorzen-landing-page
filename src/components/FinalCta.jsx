@@ -1,54 +1,37 @@
 import React from 'react'
-import { Download, Compass, ShieldCheck, FlaskConical, ArrowRight } from 'lucide-react'
+import { Compass, ShieldCheck, FlaskConical, ArrowRight } from 'lucide-react'
 
 export default function FinalCta() {
   const downloadUrl = 'https://github.com/girigabrelu/Glorzen-landing-page/releases/tag/v1.0.0'
 
   return (
-    <section id="download" className="section-spacing" style={{ position: 'relative', overflow: 'hidden' }}>
+    <section id="download" className="section-spacing" style={{ position: 'relative' }}>
       <div className="container">
         <div
           className="glass-card"
           style={{
-            maxWidth: '1080px',
+            maxWidth: '1000px',
             margin: '0 auto',
-            borderRadius: '32px',
-            padding: '4.5rem 2rem',
+            borderRadius: '24px',
+            padding: '4rem 2rem',
             textAlign: 'center',
             position: 'relative',
-            overflow: 'hidden',
-            background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(236, 72, 153, 0.15), rgba(11, 15, 25, 0.95))',
-            border: '1px solid rgba(255, 255, 255, 0.15)',
-            boxShadow: '0 30px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(99, 102, 241, 0.2)'
+            background: 'var(--bg-surface)',
+            border: '1px solid var(--border-regular)'
           }}
         >
-          {/* Ambient Glow Orbs */}
-          <div
-            style={{
-              position: 'absolute',
-              top: '-30%',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '500px',
-              height: '500px',
-              background: 'radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%)',
-              filter: 'blur(70px)',
-              pointerEvents: 'none'
-            }}
-          />
-
-          <div style={{ position: 'relative', zIndex: 1, maxWidth: '720px', margin: '0 auto' }}>
+          <div style={{ position: 'relative', zIndex: 1, maxWidth: '680px', margin: '0 auto' }}>
             <div className="glass-pill" style={{ marginBottom: '1.25rem' }}>
-              <Compass size={14} style={{ color: '#ec4899' }} />
+              <Compass size={14} style={{ color: 'var(--accent-rose)' }} />
               <span>Begin Your Journey Today</span>
             </div>
 
             <h2
               style={{
-                fontSize: 'clamp(2.25rem, 5vw, 3.75rem)',
+                fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)',
                 fontWeight: 800,
                 lineHeight: 1.15,
-                marginBottom: '1.25rem'
+                marginBottom: '1.15rem'
               }}
             >
               Your Story <span className="gradient-text">Deserves A Place.</span>
@@ -56,13 +39,13 @@ export default function FinalCta() {
 
             <p
               style={{
-                fontSize: 'clamp(1.1rem, 2vw, 1.25rem)',
-                color: '#cbd5e1',
-                marginBottom: '2.5rem',
+                fontSize: 'clamp(1rem, 1.8vw, 1.15rem)',
+                color: 'var(--text-secondary)',
+                marginBottom: '2.25rem',
                 lineHeight: 1.6
               }}
             >
-              Join Glorzen and start sharing what matters to you with a community that listens.
+              Join Glorzen and start sharing what matters to you with a community that listens with intention.
             </p>
 
             {/* Professional Download Beta Button */}
@@ -72,7 +55,7 @@ export default function FinalCta() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '1rem'
+                gap: '0.85rem'
               }}
             >
               <a
@@ -81,26 +64,19 @@ export default function FinalCta() {
                 rel="noopener noreferrer"
                 className="btn btn-primary download-cta-btn"
                 style={{
-                  padding: '1.1rem 2.8rem',
-                  fontSize: '1.15rem',
-                  fontWeight: 700,
-                  borderRadius: '9999px',
+                  padding: '1rem 2.4rem',
+                  fontSize: '1.05rem',
+                  fontWeight: 600,
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.85rem',
-                  boxShadow: '0 8px 28px rgba(99, 102, 241, 0.4), 0 0 16px rgba(236, 72, 153, 0.25)',
+                  gap: '0.75rem',
                   letterSpacing: '-0.01em',
                   textDecoration: 'none'
                 }}
               >
-                {/* Premium Ultra-Smooth Animated Download Icon */}
+                {/* Clean Animated Download Icon */}
                 <div className="premium-download-icon">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    {/* Fixed Base Tray */}
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       className="download-tray"
                       d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"
@@ -108,7 +84,6 @@ export default function FinalCta() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
-                    {/* Continuous Smooth Arrow Group */}
                     <g className="download-arrow-group">
                       <path
                         d="M12 3v11"
@@ -130,12 +105,12 @@ export default function FinalCta() {
                 <span>Download Glorzen Beta</span>
                 <span
                   style={{
-                    background: 'rgba(255, 255, 255, 0.2)',
-                    padding: '0.2rem 0.6rem',
+                    background: 'rgba(255, 255, 255, 0.16)',
+                    padding: '0.15rem 0.55rem',
                     borderRadius: '20px',
-                    fontSize: '0.8rem',
+                    fontSize: '0.75rem',
                     fontWeight: 700,
-                    letterSpacing: '0.05em'
+                    letterSpacing: '0.04em'
                   }}
                 >
                   v1.0.0
@@ -148,27 +123,25 @@ export default function FinalCta() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.45rem',
-                  color: '#94a3b8',
-                  fontSize: '0.875rem'
+                  color: 'var(--text-muted)',
+                  fontSize: '0.82rem'
                 }}
               >
-                <ShieldCheck size={16} style={{ color: '#10b981' }} />
+                <ShieldCheck size={15} style={{ color: '#10b981' }} />
                 <span>Official Release &bull; Free on GitHub</span>
               </div>
             </div>
 
-            {/* Professional Beta Testing & Feedback Notice */}
+            {/* Professional Beta Testing Notice */}
             <div
               style={{
-                marginTop: '2.25rem',
-                padding: '1.25rem 1.5rem',
-                borderRadius: '18px',
-                background: 'rgba(255, 255, 255, 0.03)',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                backdropFilter: 'blur(10px)',
-                WebkitBackdropFilter: 'blur(10px)',
-                maxWidth: '620px',
-                margin: '2.25rem auto 0 auto',
+                marginTop: '2rem',
+                padding: '1.15rem 1.4rem',
+                borderRadius: '14px',
+                background: 'rgba(255, 255, 255, 0.02)',
+                border: '1px solid var(--border-subtle)',
+                maxWidth: '580px',
+                margin: '2rem auto 0 auto',
                 textAlign: 'center'
               }}
             >
@@ -176,46 +149,46 @@ export default function FinalCta() {
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.45rem',
-                  fontSize: '0.8rem',
+                  gap: '0.4rem',
+                  fontSize: '0.75rem',
                   fontWeight: 700,
-                  color: '#fbbf24',
+                  color: 'var(--accent-amber-light)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.06em',
-                  marginBottom: '0.4rem'
+                  marginBottom: '0.35rem'
                 }}
               >
-                <FlaskConical size={15} />
+                <FlaskConical size={14} />
                 <span>Beta Preview & Testing</span>
               </div>
               <p
                 style={{
-                  fontSize: '0.88rem',
-                  color: '#94a3b8',
+                  fontSize: '0.84rem',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.55,
                   margin: 0
                 }}
               >
-                You are downloading an early preview build of Glorzen. As we continue optimizing and refining features, your testing and feedback directly help us fix bugs and elevate the experience.
+                You are downloading an early preview release of Glorzen. Your testing and feedback directly help refine features and elevate performance.
               </p>
-              <div style={{ marginTop: '0.65rem' }}>
+              <div style={{ marginTop: '0.55rem' }}>
                 <a
                   href="#suggestion"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '0.35rem',
-                    color: '#a5b4fc',
-                    fontWeight: 600,
-                    fontSize: '0.85rem',
+                    gap: '0.3rem',
+                    color: '#c7d2fe',
+                    fontWeight: 500,
+                    fontSize: '0.82rem',
                     textDecoration: 'none',
-                    transition: 'color 0.2s ease'
+                    transition: 'color var(--transition-fast)'
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#a5b4fc')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#c7d2fe')}
                 >
-                  <span>Share Feedback or Report an Issue</span>
-                  <ArrowRight size={14} />
+                  <span>Share Feedback or Suggest an Idea</span>
+                  <ArrowRight size={13} />
                 </a>
               </div>
             </div>
@@ -225,4 +198,3 @@ export default function FinalCta() {
     </section>
   )
 }
-

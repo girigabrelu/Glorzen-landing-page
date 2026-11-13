@@ -7,37 +7,37 @@ export default function PrivacyTrust() {
     {
       icon: EyeOff,
       title: 'Privacy-Conscious Design',
-      description: 'Choose who can see your Feels. Keep thoughts personal, share with inner circles, or open them to the community.'
+      description: 'Choose who can see your Feels. Keep thoughts personal, share strictly with close friends, or open them to the wider community.'
     },
     {
       icon: Sliders,
       title: 'Granular Interaction Control',
-      description: 'Control who can reply to your writing, send message requests, or view your online status.'
+      description: 'Control exactly who can reply to your writing, send direct message requests, or view your current active status.'
     },
     {
       icon: UserX,
       title: 'Direct Blocking & Muting',
-      description: 'Easily mute or block accounts with zero friction. Your space stays completely peaceful.'
+      description: 'Mute or block accounts without friction or notification. Your space remains peaceful and entirely under your command.'
     },
     {
       icon: AlertTriangle,
       title: 'Community Safety & Reporting',
-      description: 'Prompt inline reporting tools to ensure toxic behavior is swiftly flagged and reviewed by moderators.'
+      description: 'Prompt inline reporting mechanisms ensure toxic behavior is swiftly flagged and reviewed by human moderators.'
     },
     {
       icon: Lock,
       title: 'Account Ownership',
-      description: 'Your data belongs to you. Export your writings or delete your account anytime with one click.'
+      description: 'Your data belongs strictly to you. Export your writings or delete your entire account anytime with a single click.'
     },
     {
       icon: Shield,
       title: 'Transparent Philosophy',
-      description: 'Built for genuine human expression, not surveillance-ad targeting or addictive outrage algorithms.'
+      description: 'Built for genuine human expression, not surveillance-advertising tracking or addictive outrage loops.'
     }
   ]
 
   return (
-    <section id="privacy" className="section-spacing" style={{ position: 'relative', background: 'rgba(11, 15, 25, 0.5)' }}>
+    <section id="privacy" className="section-spacing" style={{ position: 'relative', background: 'var(--bg-surface-subtle)' }}>
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
@@ -46,7 +46,7 @@ export default function PrivacyTrust() {
             Your Expression. <span className="gradient-text">Your Control.</span>
           </h2>
           <p>
-            We believe an expressive platform must give you complete authority over your privacy, safety, and social boundaries.
+            We believe a thoughtful social network must provide complete authority over your privacy, safety, and personal boundaries.
           </p>
         </div>
 
@@ -68,9 +68,6 @@ export default function PrivacyTrust() {
                 className="glass-card"
                 style={{
                   padding: '1.75rem',
-                  borderRadius: '20px',
-                  background: 'rgba(15, 23, 42, 0.65)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
                   display: 'flex',
                   alignItems: 'flex-start',
                   gap: '1.25rem'
@@ -78,25 +75,25 @@ export default function PrivacyTrust() {
               >
                 <div
                   style={{
-                    width: '46px',
-                    height: '46px',
+                    width: '44px',
+                    height: '44px',
                     borderRadius: '12px',
-                    background: 'rgba(99, 102, 241, 0.12)',
-                    border: '1px solid rgba(99, 102, 241, 0.3)',
+                    background: 'var(--accent-primary-subtle)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#818cf8',
+                    color: 'var(--accent-primary-light)',
                     flexShrink: 0
                   }}
                 >
-                  <IconComp size={22} />
+                  <IconComp size={20} />
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#f8fafc', marginBottom: '0.4rem' }}>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '0.9rem', color: '#94a3b8', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                     {item.description}
                   </p>
                 </div>
@@ -107,14 +104,13 @@ export default function PrivacyTrust() {
 
         {/* Highlighted Official Privacy Policy Callout */}
         <div
+          className="glass-card"
           style={{
             maxWidth: '1100px',
             margin: '2.5rem auto 0',
             padding: '1.5rem 2rem',
-            borderRadius: '20px',
-            background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(56, 189, 248, 0.08) 100%)',
-            border: '1px solid rgba(99, 102, 241, 0.3)',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.35)',
+            background: 'var(--bg-surface)',
+            border: '1px solid var(--border-accent)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -125,23 +121,23 @@ export default function PrivacyTrust() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', maxWidth: '680px' }}>
             <div
               style={{
-                width: '46px',
-                height: '46px',
+                width: '44px',
+                height: '44px',
                 borderRadius: '12px',
-                background: 'rgba(99, 102, 241, 0.22)',
-                border: '1px solid rgba(99, 102, 241, 0.45)',
+                background: 'var(--accent-primary-subtle)',
+                border: '1px solid var(--border-regular)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#a5b4fc',
+                color: 'var(--accent-primary-light)',
                 flexShrink: 0
               }}
             >
-              <FileText size={22} />
+              <FileText size={20} />
             </div>
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.25rem' }}>
-                <span style={{ fontSize: '1rem', fontWeight: 700, color: '#f8fafc' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.2rem' }}>
+                <span style={{ fontSize: '0.98rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                   Official Privacy Policy
                 </span>
                 <span
@@ -149,38 +145,35 @@ export default function PrivacyTrust() {
                     fontSize: '0.68rem',
                     padding: '0.15rem 0.5rem',
                     borderRadius: '9999px',
-                    background: 'rgba(99, 102, 241, 0.25)',
+                    background: 'var(--accent-primary-subtle)',
                     color: '#c7d2fe',
-                    border: '1px solid rgba(99, 102, 241, 0.4)',
-                    fontWeight: 700
+                    border: '1px solid rgba(91, 101, 220, 0.3)',
+                    fontWeight: 600
                   }}
                 >
-                  Updated Aug 07, 2026
+                  Legally Compliant
                 </span>
               </div>
-              <p style={{ fontSize: '0.86rem', color: '#94a3b8', margin: 0, lineHeight: 1.5 }}>
-                Read our complete 11-section Native Legal Document covering data collection, Firebase cloud infrastructure, and account deletion rights.
+              <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0 }}>
+                Learn how we handle data storage, security, account management, and transparency in detail.
               </p>
             </div>
           </div>
 
           <Link
             to="/privacy-policy"
-            id="privacy-trust-cta-btn"
-            className="btn btn-primary"
+            id="privacy-section-view-policy-btn"
+            className="btn btn-secondary"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '0.55rem',
-              padding: '0.65rem 1.4rem',
+              gap: '0.5rem',
+              padding: '0.65rem 1.35rem',
               fontSize: '0.88rem',
-              fontWeight: 700,
-              borderRadius: '9999px',
-              textDecoration: 'none',
-              boxShadow: '0 4px 18px rgba(99, 102, 241, 0.4)'
+              textDecoration: 'none'
             }}
           >
-            <span>Read Privacy Policy</span>
+            <span>Read Full Policy</span>
             <ArrowRight size={15} />
           </Link>
         </div>

@@ -34,81 +34,50 @@ export default function HeroSection() {
       className="hero-section"
       style={{
         position: 'relative',
-        paddingTop: '8rem',
-        paddingBottom: '4rem',
+        paddingTop: '7.5rem',
+        paddingBottom: '3.5rem',
         overflow: 'hidden',
-        background: 'radial-gradient(circle at 50% 30%, #0d1222 0%, #07090e 70%)',
-        minHeight: '92vh',
+        background: 'radial-gradient(ellipse at 50% 15%, #121726 0%, #0a0d14 70%)',
+        minHeight: '90vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center'
       }}
     >
-      {/* Ethereal background ambient glow spots */}
-      <div
-        className="hero-bg-glow-top"
-        style={{
-          position: 'absolute',
-          top: '25%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '750px',
-          height: '550px',
-          background: 'radial-gradient(circle, rgba(99, 102, 241, 0.16) 0%, rgba(236, 72, 153, 0.07) 45%, transparent 75%)',
-          filter: 'blur(90px)',
-          pointerEvents: 'none',
-          zIndex: 0
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          bottom: '10%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '500px',
-          height: '250px',
-          background: 'radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%)',
-          filter: 'blur(80px)',
-          pointerEvents: 'none',
-          zIndex: 0
-        }}
-      />
-
       <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', width: '100%' }}>
-        {/* Top Badge */}
-        <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-          <div className="glass-pill" style={{ padding: '0.4rem 1.1rem', background: 'rgba(255, 255, 255, 0.03)' }}>
-            <Heart size={14} style={{ color: '#ec4899' }} />
-            <span style={{ letterSpacing: '0.04em', fontWeight: 600 }}>GLORZEN &bull; Express &bull; Connect &bull; Belong</span>
+        {/* Top Pill Badge */}
+        <div style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
+          <div className="glass-pill" style={{ padding: '0.35rem 1rem' }}>
+            <Heart size={14} style={{ color: 'var(--accent-rose)' }} />
+            <span style={{ letterSpacing: '0.03em', fontWeight: 600 }}>GLORZEN &bull; Express &bull; Connect &bull; Belong</span>
           </div>
         </div>
 
-        {/* Hero Title */}
-        <div style={{ maxWidth: '900px', margin: '0 auto 1.5rem auto' }}>
+        {/* Hero Headline & Subtext */}
+        <div style={{ maxWidth: '860px', margin: '0 auto 1.5rem auto' }}>
           <h1
             style={{
-              fontSize: 'clamp(2.4rem, 5.8vw, 4.5rem)',
-              lineHeight: 1.1,
-              marginBottom: '1.25rem',
+              fontSize: 'clamp(2.4rem, 5.5vw, 4.25rem)',
+              lineHeight: 1.12,
+              marginBottom: '1.2rem',
               fontWeight: 800,
-              letterSpacing: '-0.02em'
+              letterSpacing: '-0.025em'
             }}
           >
             Where feelings become <span className="gradient-text">connections.</span>
           </h1>
           <p
             style={{
-              fontSize: 'clamp(1.05rem, 2vw, 1.3rem)',
-              color: '#94a3b8',
-              maxWidth: '680px',
+              fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)',
+              color: 'var(--text-secondary)',
+              maxWidth: '640px',
               margin: '0 auto',
-              lineHeight: 1.65,
+              lineHeight: 1.6,
               fontWeight: 400
             }}
           >
-            Share what you feel. Discover people. Build genuine connections.
+            Share what you feel. Discover people. Build genuine connections without the noise.
           </p>
         </div>
 
@@ -118,58 +87,42 @@ export default function HeroSection() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '1rem',
-            marginBottom: '3rem',
+            gap: '0.85rem',
+            marginBottom: '2.75rem',
             flexWrap: 'wrap'
           }}
         >
-          <a href="#feels" className="btn btn-primary" style={{ padding: '0.9rem 2.2rem', fontSize: '1.05rem' }}>
-            Explore Glorzen
-            <ArrowRight size={18} />
+          <a
+            href="#feels"
+            className="btn btn-primary"
+            style={{ padding: '0.85rem 2rem', fontSize: '1rem' }}
+          >
+            <span>Explore Glorzen</span>
+            <ArrowRight size={17} />
           </a>
           <Link
             to="/privacy-policy"
             id="hero-privacy-policy-btn"
             className="btn btn-secondary"
             style={{
-              padding: '0.9rem 2.2rem',
-              fontSize: '1.05rem',
+              padding: '0.85rem 1.85rem',
+              fontSize: '1rem',
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '0.65rem',
-              textDecoration: 'none',
-              background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.18) 0%, rgba(56, 189, 248, 0.1) 100%)',
-              border: '1px solid rgba(99, 102, 241, 0.45)',
-              color: '#ffffff',
-              boxShadow: '0 4px 20px rgba(99, 102, 241, 0.25)',
-              transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, rgba(99, 102, 241, 0.32) 0%, rgba(56, 189, 248, 0.2) 100%)'
-              e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.75)'
-              e.currentTarget.style.boxShadow = '0 6px 28px rgba(99, 102, 241, 0.45)'
-              e.currentTarget.style.transform = 'translateY(-2px)'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, rgba(99, 102, 241, 0.18) 0%, rgba(56, 189, 248, 0.1) 100%)'
-              e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.45)'
-              e.currentTarget.style.boxShadow = '0 4px 20px rgba(99, 102, 241, 0.25)'
-              e.currentTarget.style.transform = 'translateY(0)'
+              gap: '0.55rem',
+              textDecoration: 'none'
             }}
           >
-            <Shield size={19} style={{ color: '#818cf8' }} />
-            <span style={{ fontWeight: 600 }}>Privacy Policy</span>
+            <Shield size={17} style={{ color: 'var(--accent-primary-light)' }} />
+            <span>Privacy Policy</span>
           </Link>
         </div>
 
-        {/* PURE TYPOGRAPHY 3D FIXED ROTATING CIRCULAR WHEEL (Stationary Centered Ellipse, Zero Wobble) */}
+        {/* PURE TYPOGRAPHY 3D ROTATING CIRCULAR WHEEL */}
         <div className="wheel-scene-wrapper">
-          {/* Static Centered 3D Tilted Stage */}
           <div className="wheel-3d-stage">
-            {/* Subtle 3D Orbital Path Guide Ring */}
+            {/* Architectural Guide Ring */}
             <div className="orbit-guide-ring" />
-
-            {/* Empty Center Halo */}
             <div className="orbit-center-empty" />
 
             {/* 3D Rotating Typography Wheel System */}
@@ -195,39 +148,38 @@ export default function HeroSection() {
         </div>
 
         {/* Bottom Tagline Statement */}
-        <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
+        <div style={{ marginTop: '2rem', textAlign: 'center' }}>
           <p
             style={{
-              fontSize: 'clamp(0.95rem, 1.5vw, 1.15rem)',
-              color: '#a5b4fc',
+              fontSize: 'clamp(0.85rem, 1.3vw, 0.95rem)',
+              color: 'var(--text-muted)',
               fontWeight: 600,
-              letterSpacing: '0.06em',
+              letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              opacity: 0.9,
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '0.5rem'
+              gap: '0.75rem'
             }}
           >
-            <span style={{ width: '20px', height: '1px', background: 'rgba(165, 180, 252, 0.5)' }} />
-            Glorzen is a place for every feeling.
-            <span style={{ width: '20px', height: '1px', background: 'rgba(165, 180, 252, 0.5)' }} />
+            <span style={{ width: '24px', height: '1px', background: 'var(--border-regular)' }} />
+            Glorzen is a place for every feeling
+            <span style={{ width: '24px', height: '1px', background: 'var(--border-regular)' }} />
           </p>
         </div>
       </div>
 
       <style>{`
         :root {
-          --orbit-radius: 340px;
-          --orbit-pitch: 60deg;
-          --orbit-speed: 38s;
+          --orbit-radius: 320px;
+          --orbit-pitch: 58deg;
+          --orbit-speed: 40s;
         }
 
         .wheel-scene-wrapper {
           position: relative;
           width: 100%;
-          max-width: 900px;
-          height: 460px;
+          max-width: 860px;
+          height: 420px;
           margin: 0 auto;
           display: flex;
           align-items: center;
@@ -237,7 +189,6 @@ export default function HeroSection() {
           contain: layout style;
         }
 
-        /* Static 3D Stage: Tilted once at center, never wobbles */
         .wheel-3d-stage {
           position: absolute;
           top: 50%;
@@ -259,8 +210,7 @@ export default function HeroSection() {
           height: calc(var(--orbit-radius) * 2);
           border-radius: 50%;
           border: 1px solid rgba(255, 255, 255, 0.08);
-          background: radial-gradient(circle, rgba(99, 102, 241, 0.03) 0%, rgba(255, 255, 255, 0.01) 50%, transparent 80%);
-          box-shadow: 0 0 60px rgba(99, 102, 241, 0.08), inset 0 0 50px rgba(236, 72, 153, 0.04);
+          background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, transparent 75%);
           transform: translate(-50%, -50%);
           pointer-events: none;
         }
@@ -270,15 +220,13 @@ export default function HeroSection() {
           top: 0;
           left: 0;
           transform: translate(-50%, -50%);
-          width: 180px;
-          height: 180px;
+          width: 140px;
+          height: 140px;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+          border: 1px dashed rgba(255, 255, 255, 0.05);
           pointer-events: none;
-          z-index: 1;
         }
 
-        /* Pure planar Z-rotation: stays completely centered */
         .orbital-wheel {
           position: absolute;
           top: 0;
@@ -309,39 +257,35 @@ export default function HeroSection() {
           left: 0;
           transform-style: preserve-3d;
           animation: counterSpinPure var(--orbit-speed) linear infinite;
-          padding: 0.5rem 1.2rem;
+          padding: 0.45rem 1.05rem;
           border-radius: 9999px;
-          background: rgba(15, 23, 42, 0.6);
-          border: 1px solid rgba(255, 255, 255, 0.14);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 16px rgba(99, 102, 241, 0.2);
+          background: #121624;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
           display: inline-flex;
           align-items: center;
           justify-content: center;
           white-space: nowrap;
           cursor: pointer;
           user-select: none;
-          transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+          transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
           will-change: transform;
         }
 
         .orbital-card:hover {
-          background: rgba(30, 41, 59, 0.9);
-          border-color: rgba(255, 255, 255, 0.4);
-          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 28px rgba(99, 102, 241, 0.5);
+          background: #192033;
+          border-color: rgba(255, 255, 255, 0.25);
+          transform: translate(-50%, -50%) rotateZ(0deg) rotateX(calc(-1 * var(--orbit-pitch))) scale(1.05);
         }
 
         .orbital-word-text {
           font-family: var(--font-heading);
-          font-size: 1.12rem;
-          font-weight: 600;
-          letter-spacing: 0.03em;
-          color: #f1f5f9;
-          text-shadow: 0 0 14px rgba(255, 255, 255, 0.4);
+          font-size: 0.98rem;
+          font-weight: 500;
+          letter-spacing: 0.02em;
+          color: #e2e8f0;
         }
 
-        /* Fixed GPU 3D Wheel Rotation Animations (Zero Left-Right Wobble) */
         @keyframes spinWheelPure {
           0% {
             transform: rotateZ(0deg);
@@ -360,45 +304,37 @@ export default function HeroSection() {
           }
         }
 
-        /* Mobile responsiveness optimization */
         @media (max-width: 768px) {
           :root {
             --orbit-radius: 145px;
             --orbit-pitch: 56deg;
-            --orbit-speed: 32s;
+            --orbit-speed: 34s;
           }
 
           .hero-section {
-            padding-top: 6.5rem !important;
-            padding-bottom: 3.5rem !important;
+            padding-top: 6rem !important;
+            padding-bottom: 2.5rem !important;
           }
 
           .wheel-scene-wrapper {
-            max-width: 350px;
-            height: 280px;
-          }
-
-          .hero-bg-glow-top {
-            width: 320px !important;
-            height: 320px !important;
+            max-width: 340px;
+            height: 260px;
           }
 
           .orbit-center-empty {
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
           }
 
           .orbital-card {
-            padding: 0.32rem 0.75rem;
+            padding: 0.3rem 0.75rem;
           }
 
           .orbital-word-text {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
           }
         }
       `}</style>
     </section>
   )
 }
-
-

@@ -3,11 +3,11 @@ import { Heart, Feather, MessageCircle, Compass, Users } from 'lucide-react'
 
 export default function CommunitySection() {
   const pillars = [
-    { title: 'Expression', text: 'Share your genuine feelings, prose, and internal reflections without judgment.', icon: Heart, color: '#ec4899' },
-    { title: 'Creativity', text: 'Turn raw thoughts into beautifully formatted Feels that speak directly to the heart.', icon: Feather, color: '#818cf8' },
-    { title: 'Conversations', text: 'Engage in thoughtful discussions that go far beyond surface-level comments.', icon: MessageCircle, color: '#22d3ee' },
-    { title: 'Discovery', text: 'Explore perspectives from diverse minds around the globe based on real resonance.', icon: Compass, color: '#a855f7' },
-    { title: 'Connections', text: 'Form long-lasting social circles built on shared values and emotional truth.', icon: Users, color: '#34d399' }
+    { title: 'Expression', text: 'Share your genuine feelings, prose, and internal reflections without fear of judgment.', icon: Heart, color: '#d96288', bg: 'rgba(217, 98, 136, 0.1)' },
+    { title: 'Creativity', text: 'Turn fleeting thoughts into beautifully formatted Feels that speak directly to the reader.', icon: Feather, color: '#7c85ec', bg: 'rgba(124, 133, 236, 0.1)' },
+    { title: 'Dialogue', text: 'Engage in thoughtful discussions that go far deeper than one-word comments and surface reactions.', icon: MessageCircle, color: '#14b8a6', bg: 'rgba(20, 184, 166, 0.1)' },
+    { title: 'Discovery', text: 'Explore perspectives from diverse minds around the globe based on resonance rather than hype.', icon: Compass, color: '#a78bfa', bg: 'rgba(167, 139, 250, 0.1)' },
+    { title: 'Belonging', text: 'Form meaningful circles grounded in shared values, emotional truth, and mutual respect.', icon: Users, color: '#38bdf8', bg: 'rgba(56, 189, 248, 0.1)' }
   ]
 
   return (
@@ -15,7 +15,7 @@ export default function CommunitySection() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <span className="badge">Community Principles</span>
+          <span className="badge">Guiding Principles</span>
           <h2>
             A Place For <span className="gradient-text">Every Voice.</span>
           </h2>
@@ -28,8 +28,8 @@ export default function CommunitySection() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '1.5rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
+            gap: '1.25rem'
           }}
         >
           {pillars.map((pillar, idx) => {
@@ -39,34 +39,34 @@ export default function CommunitySection() {
                 key={idx}
                 className="glass-card"
                 style={{
-                  padding: '1.75rem',
-                  borderRadius: '20px',
-                  background: 'rgba(15, 23, 42, 0.6)',
+                  padding: '1.75rem 1.5rem',
                   textAlign: 'center',
-                  border: '1px solid rgba(255, 255, 255, 0.08)'
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  position: 'relative'
                 }}
               >
                 <div
                   style={{
-                    width: '56px',
-                    height: '56px',
-                    borderRadius: '16px',
-                    background: 'rgba(255, 255, 255, 0.04)',
-                    border: `1px solid ${pillar.color}`,
-                    margin: '0 auto 1.25rem auto',
+                    width: '50px',
+                    height: '50px',
+                    borderRadius: '14px',
+                    background: pillar.bg,
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    marginBottom: '1.2rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: pillar.color,
-                    boxShadow: `0 4px 20px ${pillar.color}25`
+                    color: pillar.color
                   }}
                 >
-                  <IconComp size={26} />
+                  <IconComp size={22} />
                 </div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#f8fafc', marginBottom: '0.5rem' }}>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.45rem' }}>
                   {pillar.title}
                 </h3>
-                <p style={{ fontSize: '0.9rem', color: '#94a3b8', lineHeight: 1.5 }}>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
                   {pillar.text}
                 </p>
               </div>

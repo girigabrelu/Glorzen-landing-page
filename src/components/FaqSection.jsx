@@ -7,7 +7,7 @@ export default function FaqSection() {
   const faqs = [
     {
       question: 'What is Glorzen?',
-      answer: 'Glorzen is a modern social platform focused on self-expression. It gives people a dedicated space for sharing thoughts, feelings, writings, and building genuine social connections without the clutter of traditional feeds.'
+      answer: 'Glorzen is a modern social platform focused on self-expression. It gives people a dedicated, calm space for sharing thoughts, feelings, writings, and building genuine human connections without the distraction of algorithmic feeds.'
     },
     {
       question: 'What are Feels?',
@@ -15,14 +15,14 @@ export default function FaqSection() {
     },
     {
       question: 'Can I follow people?',
-      answer: 'Yes! Glorzen allows you to discover interesting minds, follow their profile, and stay updated with their latest Feels in your customized home feed.'
+      answer: 'Yes. Glorzen allows you to discover interesting writers and minds, follow their profiles, and stay updated with their latest Feels in your chronological home feed.'
     },
     {
       question: 'Can I communicate with other users?',
-      answer: 'Yes, Glorzen features built-in direct messaging and comment interactions designed for calm, respectful, and natural communication.'
+      answer: 'Yes, Glorzen features built-in direct messaging and comment interactions designed for calm, respectful, and natural communication with your circle.'
     },
     {
-      question: 'Is Glorzen free?',
+      question: 'Is Glorzen free to use?',
       answer: 'Yes, Glorzen is 100% free for individual users to create an account, customize their profile, publish Feels, and connect with the community.'
     }
   ]
@@ -36,8 +36,8 @@ export default function FaqSection() {
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
-          <div className="glass-pill" style={{ marginBottom: '1rem' }}>
-            <HelpCircle size={14} style={{ color: '#818cf8' }} />
+          <div className="glass-pill" style={{ marginBottom: '0.9rem' }}>
+            <HelpCircle size={14} style={{ color: 'var(--accent-primary-light)' }} />
             <span>Got Questions?</span>
           </div>
           <h2>
@@ -49,7 +49,7 @@ export default function FaqSection() {
         </div>
 
         {/* Accordion List */}
-        <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <div style={{ maxWidth: '780px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index
             return (
@@ -57,28 +57,28 @@ export default function FaqSection() {
                 key={index}
                 className="glass-card"
                 style={{
-                  borderRadius: '16px',
+                  borderRadius: '14px',
                   overflow: 'hidden',
-                  border: isOpen ? '1px solid rgba(99, 102, 241, 0.4)' : '1px solid rgba(255, 255, 255, 0.08)',
-                  background: isOpen ? 'rgba(15, 23, 42, 0.85)' : 'rgba(15, 23, 42, 0.5)',
-                  transition: 'all 0.3s ease'
+                  border: isOpen ? '1px solid var(--border-hover)' : '1px solid var(--border-subtle)',
+                  background: isOpen ? 'var(--bg-surface-elevated)' : 'var(--bg-surface)',
+                  transition: 'background var(--transition-fast), border-color var(--transition-fast)'
                 }}
               >
                 <button
                   onClick={() => toggleFaq(index)}
                   style={{
                     width: '100%',
-                    padding: '1.25rem 1.5rem',
+                    padding: '1.2rem 1.4rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     background: 'none',
                     border: 'none',
                     textAlign: 'left',
-                    color: '#f8fafc',
+                    color: 'var(--text-primary)',
                     fontFamily: 'var(--font-heading)',
-                    fontSize: '1.1rem',
-                    fontWeight: 700,
+                    fontSize: '1.02rem',
+                    fontWeight: 600,
                     cursor: 'pointer'
                   }}
                   aria-expanded={isOpen}
@@ -87,23 +87,25 @@ export default function FaqSection() {
                   <div
                     style={{
                       transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                      transition: 'transform 0.3s ease',
-                      color: isOpen ? '#ec4899' : '#94a3b8'
+                      transition: 'transform 0.25s ease',
+                      color: isOpen ? 'var(--accent-primary-light)' : 'var(--text-muted)',
+                      flexShrink: 0,
+                      marginLeft: '1rem'
                     }}
                   >
-                    <ChevronDown size={20} />
+                    <ChevronDown size={19} />
                   </div>
                 </button>
 
                 {isOpen && (
                   <div
                     style={{
-                      padding: '0 1.5rem 1.5rem 1.5rem',
-                      color: '#94a3b8',
-                      fontSize: '0.98rem',
+                      padding: '0 1.4rem 1.25rem 1.4rem',
+                      color: 'var(--text-secondary)',
+                      fontSize: '0.92rem',
                       lineHeight: 1.6,
-                      borderTop: '1px solid rgba(255, 255, 255, 0.04)',
-                      paddingTop: '1rem'
+                      borderTop: '1px solid var(--border-subtle)',
+                      paddingTop: '0.9rem'
                     }}
                   >
                     {faq.answer}
