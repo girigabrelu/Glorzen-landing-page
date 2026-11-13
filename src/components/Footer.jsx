@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Code2, Mail, ArrowRight } from 'lucide-react'
 import glorzenLogo from '../assets/glorzen-logo.png'
-import developerPhoto from '../assets/developer-giri.jpg'
 
 export default function Footer() {
   const footerLinks = [
@@ -155,66 +154,25 @@ export default function Footer() {
             boxShadow: '0 4px 24px rgba(0, 0, 0, 0.25)',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <div style={{ position: 'relative', width: '46px', height: '46px' }}>
-              <div
-                style={{
-                  width: '46px',
-                  height: '46px',
-                  borderRadius: '50%',
-                  overflow: 'hidden',
-                  border: '2px solid rgba(99, 102, 241, 0.5)',
-                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
-                }}
-              >
-                <img
-                  src={developerPhoto}
-                  alt="Giri Gabrelu"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                    objectFit: 'cover',
-                    objectPosition: 'center 20%',
-                    transform: 'scale(1.12)',
-                    transformOrigin: '50% 25%',
-                    display: 'block'
-                  }}
-                />
-              </div>
+          <div>
+            <div style={{ color: '#f8fafc', fontWeight: 600, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span>Built by Giri Gabrelu</span>
               <span
                 style={{
-                  position: 'absolute',
-                  bottom: '-2px',
-                  right: '-2px',
-                  width: '12px',
-                  height: '12px',
-                  borderRadius: '50%',
-                  background: '#10b981',
-                  border: '2px solid #07090e'
+                  fontSize: '0.7rem',
+                  padding: '0.15rem 0.5rem',
+                  borderRadius: '9999px',
+                  background: 'rgba(99, 102, 241, 0.2)',
+                  color: '#a5b4fc',
+                  border: '1px solid rgba(99, 102, 241, 0.35)',
+                  fontWeight: 600
                 }}
-              />
+              >
+                Creator
+              </span>
             </div>
-            <div>
-              <div style={{ color: '#f8fafc', fontWeight: 600, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span>Built by Giri Gabrelu</span>
-                <span
-                  style={{
-                    fontSize: '0.7rem',
-                    padding: '0.15rem 0.5rem',
-                    borderRadius: '9999px',
-                    background: 'rgba(99, 102, 241, 0.2)',
-                    color: '#a5b4fc',
-                    border: '1px solid rgba(99, 102, 241, 0.35)',
-                    fontWeight: 600
-                  }}
-                >
-                  Creator
-                </span>
-              </div>
-              <div style={{ color: '#94a3b8', fontSize: '0.82rem', marginTop: '0.15rem' }}>
-                Developer of Glorzen &bull; B.Tech Student
-              </div>
+            <div style={{ color: '#94a3b8', fontSize: '0.82rem', marginTop: '0.15rem' }}>
+              Developer of Glorzen &bull; B.Tech Student
             </div>
           </div>
 
